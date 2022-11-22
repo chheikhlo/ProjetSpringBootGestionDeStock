@@ -1,5 +1,7 @@
 name: Build
+
 on: push
+
 jobs:
   build:
     name: Build
@@ -21,4 +23,3 @@ jobs:
           echo $JAVA_HOME
       - run: ./mvnw install
       - uses: codecov/codecov-action@v1
-

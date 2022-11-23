@@ -2,7 +2,7 @@ package com.cheikhlo.gestiondestock.exception;
 
 import lombok.Getter;
 
-//Si je cherche un article par son code et que je le trouve pas cette arcticle , je dois envoyé une exception de type EntityNotFound
+//Si je cherche un article par son code et que je le trouve pas cette article , je dois envoyé une exception de type EntityNotFound
 public class EntityNotFoundException extends RuntimeException {
 
   @Getter

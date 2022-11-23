@@ -10,4 +10,6 @@ class GestionDeStockApplicationTests {
 	void contextLoads() {
 	}
 
+	
+
 }

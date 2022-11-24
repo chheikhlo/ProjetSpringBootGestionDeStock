@@ -8,8 +8,6 @@ import java.util.List;
 
 public class VenteValidator {
 
-    public class VentesValidator {
-
         public static List<String> validate(VentesDto dto) {
             List<String> errors = new ArrayList<>();
             if (dto == null) {
@@ -27,5 +25,4 @@ public class VenteValidator {
 
             return errors;
         }
-    }
 }

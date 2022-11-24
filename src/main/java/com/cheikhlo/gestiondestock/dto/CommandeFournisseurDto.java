@@ -1,9 +1,6 @@
 package com.cheikhlo.gestiondestock.dto;
 
-import com.cheikhlo.gestiondestock.model.Client;
-import com.cheikhlo.gestiondestock.model.CommandeFournisseur;
-import com.cheikhlo.gestiondestock.model.Fournisseur;
-import com.cheikhlo.gestiondestock.model.LigneCommandeFournisseur;
+import com.cheikhlo.gestiondestock.model.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Builder;
 import lombok.Data;
@@ -29,6 +26,7 @@ public class CommandeFournisseurDto {
 
     @JsonIgnore
     private List<LigneCommandeFournisseurDto> ligneCommandeFournisseurs;
+    private EtatCommande etatCommande;
 
 
     public static CommandeFournisseurDto fromEntity(CommandeFournisseur commandeFournisseur) {
@@ -56,6 +54,7 @@ public class CommandeFournisseurDto {
     }
 
 
-
-
+    public boolean isCommandeLivree() {
+        return EtatCommande.LIVREE.equals(this.etatCommande);
+    }
 }

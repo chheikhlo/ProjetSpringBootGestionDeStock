@@ -2,6 +2,7 @@ package com.cheikhlo.gestiondestock.dto;
 
 import com.cheikhlo.gestiondestock.model.Article;
 import com.cheikhlo.gestiondestock.model.MvtStk;
+import com.cheikhlo.gestiondestock.model.SourceMvtStk;
 import com.cheikhlo.gestiondestock.model.TypeMvtStk;
 import lombok.Builder;
 import lombok.Data;
@@ -26,6 +27,11 @@ public class MvtStkDto {
 
     private TypeMvtStk typeMvt;
 
+    private SourceMvtStk sourceMvt;
+
+    private Integer idEntreprise;
+
+
     public static MvtStkDto fromEntity(MvtStk mvtStk) {
         if (mvtStk == null) {
             return null;
@@ -37,6 +43,7 @@ public class MvtStkDto {
                 .quantite(mvtStk.getQuantite())
                 .article(ArticleDto.fromEntity(mvtStk.getArticle()))
                 .typeMvt(mvtStk.getTypeMvt())
+                .sourceMvt(mvtStk.getSourceMvt())
                 .build();
     }
 
@@ -51,6 +58,7 @@ public class MvtStkDto {
         mvtStk.setQuantite(dto.getQuantite());
         mvtStk.setArticle(ArticleDto.toEntity(dto.getArticle()));
         mvtStk.setTypeMvt(dto.getTypeMvt());
+        mvtStk.setSourceMvt(dto.getSourceMvt());
         return mvtStk;
     }
 
